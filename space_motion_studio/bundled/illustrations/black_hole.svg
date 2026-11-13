@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="spaceGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#0f172a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="accretionDisk" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#fde047"/>
+      <stop offset="55%" stop-color="#f97316"/>
+      <stop offset="85%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="photonRing" cx="50%" cy="50%" r="50%">
+      <stop offset="80%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="92%" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="97%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="400" cy="400" r="380" fill="url(#spaceGlow)"/>
+
+  <!-- Accretion disk behind the black hole -->
+  <ellipse cx="400" cy="400" rx="340" ry="110" fill="url(#accretionDisk)" filter="url(#glow)" transform="rotate(-15, 400, 400)"/>
+
+  <!-- Relativistic bending of disk above event horizon -->
+  <path d="M 120 400 Q 400 180 680 400 Q 400 240 120 400 Z" fill="url(#accretionDisk)" opacity="0.85" filter="url(#glow)"/>
+
+  <!-- Shadow / Event horizon -->
+  <circle cx="400" cy="400" r="160" fill="#000000"/>
+
+  <!-- Photon Sphere Ring -->
+  <circle cx="400" cy="400" r="168" fill="none" stroke="url(#photonRing)" stroke-width="6" opacity="0.95" filter="url(#glow)"/>
+
+  <!-- Foreground accretion disk -->
+  <path d="M 70 410 Q 400 580 730 410 Q 400 480 70 410 Z" fill="url(#accretionDisk)" opacity="0.95" filter="url(#glow)" transform="rotate(-15, 400, 400)"/>
+
+  <!-- Inner brightest accretion edge -->
+  <ellipse cx="400" cy="400" rx="190" ry="45" fill="none" stroke="#fff" stroke-width="4" opacity="0.8" transform="rotate(-15, 400, 400)"/>
+</svg>
