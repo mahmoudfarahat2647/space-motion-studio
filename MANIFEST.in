@@ -1,0 +1,6 @@
+recursive-include space_motion_studio/bundled *
+include SPEC.md
+include package.json
+include tsconfig.json
+include remotion.config.ts
+recursive-include src *.ts *.tsx

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "topic": "Black Holes",
+  "projectTitle": "رحلة إلى الثقب الأسود",
+  "locale": "ar-EG",
+  "durationTarget": 7.0,
+  "theme": {
+    "bgPrimary": "#050713",
+    "accentPrimary": "#38bdf8",
+    "accentSecondary": "#f59e0b",
+    "textPrimary": "#ffffff"
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "narration": "الثقب الأسود هو مكان في الفضاء جاذبيته قوية لدرجة إن حتى الضوء مبيعرفش يهرب منه.",
+      "onScreenTitle": "ما هو الثقب الأسود؟",
+      "visualIntent": "A glowing cosmic black hole illustration with an accretion disk",
+      "template": "title-illustration",
+      "templateParameters": {
+        "titlePosition": "top",
+        "scale": 1.0
+      },
+      "animationPreset": "zoom-in",
+      "soundEffect": "whoosh",
+      "illustration": "illustrations/black_hole.svg",
+      "narrationAudio": "audio/black_hole_intro.mp3"
+    }
+  ]
+}

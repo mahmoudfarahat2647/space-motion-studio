@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "space-motion-studio"
+version = "0.1.0"
+description = "Automated Arabic Motion Graphics Video Pipeline"
+readme = "SPEC.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+space-motion-studio = "space_motion_studio.entrypoints.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["space_motion_studio*"]
+
+[tool.setuptools.package-data]
+space_motion_studio = [
+    "bundled/*",
+    "bundled/audio/*",
+    "bundled/fonts/*",
+    "bundled/illustrations/*",
+    "bundled/**/*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
